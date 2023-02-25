@@ -1,0 +1,101 @@
+// ---- Global-Tags ----
+html {
+  overflow-x: hidden;
+  box-sizing: border-box;
+  &.fixed {
+    overflow-y: hidden;
+  }
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+body {
+  position: relative;
+  overflow-x: hidden;
+  min-width: 320px;
+  font-family: $font;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: $black;
+}
+a {
+  color: $black;
+  transition: 0.2s;
+}
+svg {
+  fill: $black;
+  transition: 0.2s;
+  height: auto;
+}
+
+// ---- Global-Classes ----
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1170px;
+}
+
+.btn {
+  padding: 5px 27px;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  color: $white;
+  background: $main;
+  border-radius: 40px;
+  transition: 0.2s;
+  &:hover {
+    box-shadow: 0px 0px 8px rgba($main, 0.25);
+    transform: translateY(-3px);
+  }
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.input {
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  input, textarea {
+    width: 100%;
+    font-family: $font;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    color: $white;
+    &::placeholder {
+      color: $white;
+    }
+  }
+  textarea {
+    height: 150px;
+  }
+  svg {
+    width: 15px;
+    cursor: pointer;
+  }
+}
+
+// ScrollBar
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $main;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-track {
+  background-color: $black;
+}
+
+// Selection
+::selection {
+  background: rgba($main, 0.5) !important;
+}
