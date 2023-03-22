@@ -1,12 +1,11 @@
-import type { AppProps } from "next/app";
-import Head from "next/head";
-import { Provider } from "react-redux";
+import { AppProps } from 'next/app';
+import Head from 'next/head';
+import { Provider } from 'react-redux';
 
-import { wrapper } from "@/redux/store";
-import { Api } from "@/utils/api";
-import { setUserData } from "@/redux/user/slice";
-
-import "@/styles/style.scss";
+import { wrapper } from '@/redux/store';
+import { setUserData } from '@/redux/user/slice';
+import '@/styles/style.scss';
+import { Api } from '@/utils/api';
 
 const App = ({ Component, ...rest }: AppProps) => {
   const { store, props } = wrapper.useWrappedStore(rest);
@@ -38,7 +37,7 @@ App.getInitialProps = wrapper.getInitialAppProps(
         const userData = await Api(ctx).user.getProfile();
         store.dispatch(setUserData(userData));
       } catch (err) {
-        console.log("Error Authorization");
+        console.log('Error Authorization');
       }
 
       return {
@@ -46,7 +45,7 @@ App.getInitialProps = wrapper.getInitialAppProps(
           ? await Component.getInitialProps({ ...ctx, store })
           : {},
       };
-    }
+    },
 );
 
 export default App;

@@ -1,6 +1,6 @@
-import { NextPage } from "next";
+import type { NextPage } from 'next';
 
-import { MainLayout } from "@/layouts/MainLayout";
+import { MainLayout } from '@/layouts/MainLayout';
 
 interface HomePageProps {}
 
